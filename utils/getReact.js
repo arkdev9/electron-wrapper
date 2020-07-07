@@ -4,7 +4,7 @@ const path = require('path')
 const fs = require('fs')
 const AdmZip = require('adm-zip')
 
-const { GITHUB_RELEASE_TOKEN } = process.env
+const { GH_TOKEN } = process.env
 
 function moveFileUnzip (source, target) {
   fs.rename(source, target, err => {
@@ -33,7 +33,7 @@ function download (url, file) {
         headers: {
           Accept: 'application/octet-stream',
           'User-Agent': 'rogueDev9',
-          Authorization: `Bearer ${GITHUB_RELEASE_TOKEN}`
+          Authorization: `Bearer ${GH_TOKEN}`
         }
       },
       res1 => {
@@ -68,7 +68,7 @@ function downloadLatestRelease () {
         headers: {
           Accept: 'application/json',
           'User-Agent': 'rogueDev9',
-          Authorization: `Bearer ${GITHUB_RELEASE_TOKEN}`
+          Authorization: `Bearer ${GH_TOKEN}`
         }
       },
       res => {
