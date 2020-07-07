@@ -1,0 +1,53 @@
+{
+  "name": "riku-device-electron",
+  "version": "0.0.1",
+  "description": "",
+  "main": "main.js",
+  "build": {
+    "appId": "ftlabs.riku",
+    "files": [
+      "./build/**/*",
+      "./main.js"
+    ],
+    "extends": null,
+    "linux": {
+      "target": [
+        "deb"
+      ]
+    },
+    "publish": [
+      {
+        "provider": "github",
+        "owner": "futuristiclabs",
+        "repo": "riku-device-ui"
+      }
+    ]
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/futuristiclabs/riku-device-ui.git"
+  },
+  "scripts": {
+    "start": "electron .",
+    "pull-ui": "node utils/getReact.js",
+    "build": "yarn pull-ui && electron-builder",
+    "release": "yarn pull-ui && electron-builder --linux --publish always",
+    "postinstall": "electron-builder install-app-deps",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "adm-zip": "^0.4.16",
+    "devtron": "^1.4.0",
+    "electron": "^9.0.5",
+    "electron-builder": "^22.7.0",
+    "prettier-standard": "^16.3.0",
+    "standard": "^14.3.4"
+  },
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "electron-updater": "^4.3.1"
+  }
+}

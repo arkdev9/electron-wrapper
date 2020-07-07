@@ -1,0 +1,32 @@
+name: Build/release
+
+on:
+  push:
+    tags:
+      - "*"
+
+jobs:
+  release:
+    runs-on: ${{ matrix.os }}
+
+    strategy:
+      matrix:
+        os: [ubuntu-latest]
+
+    steps:
+      - name: Check out Git repository
+        uses: actions/checkout@v1
+
+      - name: Install Node.js, NPM and Yarn
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12
+
+      - name: Build/release Electron app
+        uses: samuelmeuli/action-electron-builder@v1
+        env:
+          GH_TOKEN: ${{ secrets.github_token }}
+        with:
+          # GitHub token, automatically provided to the action
+          github_token: ${{ secrets.github_token }}
+          release: ${{ startsWith(github.ref, 'refs/tags/v') }}
