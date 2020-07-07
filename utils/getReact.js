@@ -80,6 +80,7 @@ function downloadLatestRelease () {
         res.on('end', () => {
           resp = JSON.parse(resp)
           const file = fs.createWriteStream(path.join(__dirname, 'build.zip'))
+          console.log(resp)
           download(resp[0].assets[0].url, file)
         })
       }

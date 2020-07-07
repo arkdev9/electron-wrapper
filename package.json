@@ -1,5 +1,5 @@
 {
-  "name": "riku-device-electron",
+  "name": "riku-electron",
   "version": "0.0.1",
   "description": "",
   "main": "main.js",
@@ -19,7 +19,7 @@
       {
         "provider": "github",
         "owner": "futuristiclabs",
-        "repo": "riku-device-ui"
+        "repo": "riku-electron"
       }
     ]
   },
@@ -28,7 +28,7 @@
   "license": "ISC",
   "repository": {
     "type": "git",
-    "url": "https://github.com/futuristiclabs/riku-device-ui.git"
+    "url": "https://github.com/futuristiclabs/riku-electron.git"
   },
   "scripts": {
     "start": "electron .",
