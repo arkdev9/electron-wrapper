@@ -25,8 +25,8 @@ jobs:
       - name: Build/release Electron app
         uses: samuelmeuli/action-electron-builder@v1
         env:
-          GH_TOKEN: ${{ secrets.github_token }}
+          GH_TOKEN: ${{ secrets.ACCESS_TOKEN_ABHISHEK }}
         with:
           # GitHub token, automatically provided to the action
-          github_token: ${{ secrets.github_token }}
+          github_token: ${{ secrets.ACCESS_TOKEN_ABHISHEK }}
           release: ${{ startsWith(github.ref, 'refs/tags/v') }}
