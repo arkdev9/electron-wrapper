@@ -1,5 +1,6 @@
 {
   "name": "riku-electron",
+  "author": "Futuristic Labs <abhishek.kasireddy@ftlabs.io>",
   "version": "0.0.1",
   "description": "",
   "main": "main.js",
@@ -24,7 +25,6 @@
     ]
   },
   "keywords": [],
-  "author": "",
   "license": "ISC",
   "repository": {
     "type": "git",
