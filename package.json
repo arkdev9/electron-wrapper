@@ -13,7 +13,15 @@
     "extends": null,
     "linux": {
       "target": [
-        "deb"
+        {
+          "target": "deb"
+        },
+        {
+          "target": "appimage",
+          "arch": [
+            "armv7l"
+          ]
+        }
       ]
     },
     "publish": [
@@ -34,6 +42,7 @@
     "start": "electron .",
     "pull-ui": "node utils/getReact.js",
     "build": "yarn pull-ui && electron-builder",
+    "build-local": "cp -r ../riku-device-ui/build .; electron-builder",
     "release": "yarn pull-ui && electron-builder --linux --publish always",
     "postinstall": "electron-builder install-app-deps",
     "test": "echo \"Error: no test specified\" && exit 1"

@@ -5,8 +5,8 @@ const { autoUpdater } = require('electron-updater')
 var win
 function createWindow () {
   win = new BrowserWindow({
-    width: 1200,
-    height: 800,
+    width: 480,
+    height: 640,
     webPreferences: {
       nodeIntegration: true
     }
@@ -16,8 +16,8 @@ function createWindow () {
     autoUpdater.checkForUpdatesAndNotify()
   })
 
-  win.loadFile('build/index.html')
-  // win.loadURL('http://localhost:3000/')
+  // win.loadFile('build/index.html')
+  win.loadURL('http://localhost:3000/')
 
   win.webContents.openDevTools()
 }
