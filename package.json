@@ -1,20 +1,23 @@
 {
   "name": "riku-electron",
   "author": "Futuristic Labs <abhishek.kasireddy@ftlabs.io>",
-  "version": "0.0.11",
+  "version": "0.0.12",
   "description": "",
   "main": "main.js",
   "build": {
     "appId": "ftlabs.riku",
     "files": [
-      "./build/**/*",
-      "./main.js"
+      "build/**/*",
+      "main.js"
     ],
     "extends": null,
     "linux": {
       "target": [
         {
-          "target": "deb"
+          "target": "deb",
+          "arch": [
+            "armv7l"
+          ]
         },
         {
           "target": "appimage",
@@ -41,8 +44,9 @@
   "scripts": {
     "start": "electron .",
     "pull-ui": "node utils/getReact.js",
-    "build": "yarn pull-ui && electron-builder",
-    "build-local": "cp -r ../riku-device-ui/build .; electron-builder",
+    "pull-ui-local": "cp -r ../riku-device-ui/build .",
+    "build": "NODE_ENV=production yarn pull-ui && electron-builder",
+    "build-local": "NODE_ENV=development cp -r ../riku-device-ui/build . && electron-builder",
     "release": "yarn pull-ui && electron-builder --linux --publish always",
     "postinstall": "electron-builder install-app-deps",
     "test": "echo \"Error: no test specified\" && exit 1"
