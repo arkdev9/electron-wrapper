@@ -1,7 +1,7 @@
 {
   "name": "riku-electron",
   "author": "Futuristic Labs <abhishek.kasireddy@ftlabs.io>",
-  "version": "0.0.12",
+  "version": "0.0.2",
   "description": "",
   "main": "main.js",
   "build": {
