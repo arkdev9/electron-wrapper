@@ -45,9 +45,9 @@
     "start": "electron .",
     "pull-ui": "node utils/getReact.js",
     "pull-ui-local": "cp -r ../riku-device-ui/build .",
-    "build": "NODE_ENV=production yarn pull-ui && electron-builder",
     "build-local": "NODE_ENV=development cp -r ../riku-device-ui/build . && electron-builder",
-    "release": "yarn pull-ui && electron-builder --linux --publish always",
+    "build": "NODE_ENV=production electron-builder",
+    "release": "electron-builder --linux --publish always",
     "postinstall": "electron-builder install-app-deps",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

@@ -1,0 +1,7 @@
+package.json
+// "build": "NODE_ENV=production yarn pull-ui && electron-builder",
+"build-local": "NODE_ENV=development cp -r ../riku-device-ui/build . && electron-builder",
+// "release": "yarn pull-ui && electron-builder --linux --publish always",
+
+.gitignore
+build
